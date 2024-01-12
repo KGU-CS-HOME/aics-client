@@ -40,7 +40,7 @@ export function MainNav() {
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+                      href="/about"
                     >
                       <Icons.logo className="h-12 w-12" />
                       <div className="mb-2 mt-4 text-lg font-medium">
@@ -52,13 +52,13 @@ export function MainNav() {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/" title="컴퓨터공학전공">
+                <ListItem href="/about/cs" title="컴퓨터공학전공">
                   설명
                 </ListItem>
-                <ListItem href="/" title="인공지능전공">
+                <ListItem href="/about/ai" title="인공지능전공">
                   설명
                 </ListItem>
-                <ListItem href="/" title="SW안전보안전공">
+                <ListItem href="/about/sw" title="SW안전보안전공">
                   설명
                 </ListItem>
               </ul>
