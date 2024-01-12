@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={cn('font-pretendard', pretendard.variable)}>
         <div className="flex min-h-screen flex-col bg-background">
           <SiteHeader />
-          <div className="container flex-1 px-6">{children}</div>
+          <div className="container flex-1 px-4">{children}</div>
         </div>
       </body>
     </html>

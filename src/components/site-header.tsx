@@ -26,10 +26,15 @@ export function SiteHeader() {
 
   return (
     <header className="container sticky top-0 z-50 flex justify-center px-2">
-      <div className={cn('w-full transition-all', scrolling && 'px-4 pt-8')}>
+      <div
+        className={cn(
+          'w-full transition-all',
+          scrolling && 'px-2 pt-4 lg:px-4 lg:pt-8',
+        )}
+      >
         <div
           className={cn(
-            'flex justify-between rounded-3xl bg-white p-6 transition-all',
+            'flex justify-between rounded-lg bg-white p-6 transition-all',
             scrolling && 'p-4',
             scrolling === 2 && 'shadow-xs border',
           )}
