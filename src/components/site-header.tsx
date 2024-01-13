@@ -34,9 +34,9 @@ export function SiteHeader() {
       >
         <div
           className={cn(
-            'flex justify-between rounded-lg bg-white p-6 transition-all',
+            'flex justify-between rounded-lg bg-background p-6 transition-all',
             scrolling && 'p-4',
-            scrolling === 2 && 'shadow-md ring-1 ring-primary',
+            scrolling === 2 && 'ring-1 ring-border',
           )}
         >
           <Link href="/" className="mr-6 flex items-center space-x-2">
