@@ -12,7 +12,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) setScrolling(2)
+      if (window.scrollY > 120) setScrolling(2)
       else if (window.scrollY > 80) setScrolling(1)
       else if (window.scrollY < 10) setScrolling(0)
     }
@@ -36,7 +36,7 @@ export function SiteHeader() {
           className={cn(
             'flex justify-between rounded-lg bg-white p-6 transition-all',
             scrolling && 'p-4',
-            scrolling === 2 && 'shadow-xs border',
+            scrolling === 2 && 'shadow-md ring-1 ring-primary',
           )}
         >
           <Link href="/" className="mr-6 flex items-center space-x-2">
