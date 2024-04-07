@@ -26,7 +26,7 @@ function ImageCarousel() {
     >
       <CarouselContent className="-ml-0">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pl-0">
+          <CarouselItem key={`carousel-image-${index}`} className="pl-0">
             <AspectRatio ratio={16 / 9}>
               <div className="bg-primary/50 flex h-full w-full items-center justify-center">
                 {index + 1}
