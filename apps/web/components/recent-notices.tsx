@@ -145,7 +145,7 @@ function RecentNotices() {
         <CardHeader>
           <CardTitle>학부소식</CardTitle>
           <CardDescription>
-            관련 기사, 활동 및 수상 소식 등을 소개해요.
+            기사, 활동 및 수상 소식 등을 소개해요.
           </CardDescription>
         </CardHeader>
         <CardContent>
