@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import {
   Card,
   CardContent,
@@ -132,10 +134,10 @@ function RecentNotices() {
           <ul className="flex flex-col gap-2">
             {NOTICE_DATA.map((notice) => (
               <li key={`notice-${notice.id}`}>
-                <a href="#" className="flex justify-between gap-4">
+                <Link href="#" className="flex justify-between gap-4">
                   <h3 className="line-clamp-1">{notice.title}</h3>
                   <p>{notice.date}</p>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -152,10 +154,10 @@ function RecentNotices() {
           <ul className="flex flex-col gap-2">
             {NOTICE2_DATA.map((notice) => (
               <li key={`notice-${notice.id}`}>
-                <a href="#" className="flex justify-between gap-4">
+                <Link href="#" className="flex justify-between gap-4">
                   <h3 className="line-clamp-1">{notice.title}</h3>
                   <p>{notice.date}</p>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
