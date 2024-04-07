@@ -2,6 +2,7 @@
 
 import Autoplay from 'embla-carousel-autoplay'
 
+import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
 import {
   Carousel,
   CarouselContent,
@@ -21,14 +22,16 @@ function ImageCarousel() {
           stopOnInteraction: false,
         }),
       ]}
-      className="w-full"
+      className="w-full overflow-hidden rounded-xl"
     >
-      <CarouselContent>
-        {Array.from({ length: 3 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="bg-primary/50 aspect-video rounded-xl p-1">
-              {index + 1}
-            </div>
+      <CarouselContent className="-ml-0">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className="pl-0">
+            <AspectRatio ratio={16 / 9}>
+              <div className="bg-primary/50 flex h-full w-full items-center justify-center">
+                {index + 1}
+              </div>
+            </AspectRatio>
           </CarouselItem>
         ))}
       </CarouselContent>
