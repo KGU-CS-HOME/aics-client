@@ -6,6 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@repo/ui/components/ui/carousel'
+import { buttonVariants } from '@repo/ui/components/ui/button'
 
 function ShortcutLink({
   className,
@@ -17,17 +18,22 @@ function ShortcutLink({
   href: string
 }) {
   return (
-    <Link href={href} target="_blank">
-      <div
+    <Link
+      href={href}
+      target="_blank"
+      className={cn(
+        buttonVariants({ variant: 'secondary' }),
+        'w-40 rounded-lg py-10 md:w-80',
+      )}
+    >
+      <h4
         className={cn(
-          'hover:bg-primary hover:text-primary-foreground text-muted-foreground bg-muted rounded-xl py-8 transition lg:w-80',
+          'text-base font-semibold leading-none tracking-tight',
           className,
         )}
       >
-        <h4 className="text-center font-semibold leading-none tracking-tight">
-          {children}
-        </h4>
-      </div>
+        {children}
+      </h4>
     </Link>
   )
 }
