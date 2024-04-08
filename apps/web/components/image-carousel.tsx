@@ -35,8 +35,8 @@ function ImageCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="bg-primary text-primary-foreground left-4 border-none shadow-none" />
-      <CarouselNext className="bg-primary text-primary-foreground right-4 border-none shadow-none" />
+      <CarouselPrevious className="bg-primary text-primary-foreground left-4 border-none" />
+      <CarouselNext className="bg-primary text-primary-foreground right-4 border-none" />
     </Carousel>
   )
 }
