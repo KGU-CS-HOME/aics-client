@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { cn } from '@repo/ui/lib/utils'
-import { Card, CardHeader, CardTitle } from '@repo/ui/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -19,23 +18,23 @@ function ShortcutLink({
 }) {
   return (
     <Link href={href} target="_blank">
-      <Card
+      <div
         className={cn(
-          'hover:bg-secondary w-80 rounded-none shadow-none transition',
+          'hover:bg-primary hover:text-primary-foreground text-muted-foreground bg-muted rounded-xl py-8 transition lg:w-80',
           className,
         )}
       >
-        <CardHeader>
-          <CardTitle className="py-2 text-center">{children}</CardTitle>
-        </CardHeader>
-      </Card>
+        <h4 className="text-center font-semibold leading-none tracking-tight">
+          {children}
+        </h4>
+      </div>
     </Link>
   )
 }
 
 function Shortcut() {
   return (
-    <Carousel opts={{ dragFree: true }} className="flex flex-col gap-2">
+    <Carousel opts={{ dragFree: true }}>
       <CarouselContent>
         <CarouselItem className="basis-auto">
           <ShortcutLink href="https://www.kyonggi.ac.kr/" className="">
