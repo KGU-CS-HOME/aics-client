@@ -14,8 +14,7 @@ function SiteFooter() {
           전화&emsp;|&emsp;031-249-9670
         </p>
         <p className="text-sm font-medium">
-          © {year} KGU AI Computer Science/Engineering Dept. All rights
-          reserved.
+          © {year} KGU AI Computer Science Dept. All rights reserved.
         </p>
       </div>
     </footer>
