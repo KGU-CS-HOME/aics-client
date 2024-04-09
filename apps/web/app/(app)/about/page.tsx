@@ -17,7 +17,7 @@ export default function Page(): JSX.Element {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>학부 소개</BreadcrumbPage>
+            <BreadcrumbPage>학부소개</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

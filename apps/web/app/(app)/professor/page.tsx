@@ -27,7 +27,9 @@ export default function Page(): JSX.Element {
         <h2 className="scroll-m-20 pb-2 text-3xl font-bold tracking-tight">
           교수진 소개
         </h2>
-        <p className="text-muted-foreground">교수진을 소개합니다.</p>
+        <p className="text-muted-foreground">
+          경기대학교 AI컴퓨터공학부의 교수진을 소개합니다.
+        </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {professors.map((professor) => (
