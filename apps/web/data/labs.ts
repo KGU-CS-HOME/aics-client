@@ -80,7 +80,6 @@ const labs: Lab[] = [
   {
     id: 11,
     name: '기계학습 연구실',
-    img: '',
     location: '육영관 8505B호',
     site: 'https://sites.google.com/view/mllab-kgu',
   },

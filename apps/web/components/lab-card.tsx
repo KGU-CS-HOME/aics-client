@@ -12,7 +12,7 @@ function LabCard({ lab }: { lab: Lab }) {
         <div className="hidden w-32 sm:block">
           <AspectRatio ratio={1 / 1}>
             <Image
-              src={lab.img}
+              src={lab.img || 'https://placehold.co/128'}
               alt="lab-logo"
               draggable={false}
               fill
