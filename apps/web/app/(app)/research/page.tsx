@@ -33,7 +33,7 @@ export default function Page(): JSX.Element {
       </div>
       <div className="grid gap-4 lg:grid-cols-2">
         {labs.map((lab) => (
-          <LabCard key={lab.id} lab={lab} />
+          <LabCard key={`lab-${lab.id}`} lab={lab} />
         ))}
       </div>
     </div>
