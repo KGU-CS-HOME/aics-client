@@ -64,13 +64,8 @@ function SiteHeader() {
               공지사항
             </Link>
             <Link
-              href="/service"
-              className={cn(
-                'hover:text-foreground/80 transition-colors',
-                pathname.startsWith('/service')
-                  ? 'text-foreground'
-                  : 'text-foreground/60',
-              )}
+              href="#"
+              className="text-foreground/60 hover:text-foreground/80 transition-colors"
             >
               서비스
             </Link>
