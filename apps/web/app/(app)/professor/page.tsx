@@ -11,8 +11,8 @@ import { professors } from '../../../data/professors'
 
 export default function Page(): JSX.Element {
   return (
-    <div className="container flex max-w-screen-2xl flex-col gap-8">
-      <Breadcrumb className="pt-4">
+    <div className="container flex max-w-screen-2xl flex-col gap-8 pt-4">
+      <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">홈</BreadcrumbLink>
