@@ -1,4 +1,8 @@
-import { Avatar, AvatarImage } from '@repo/ui/components/ui/avatar'
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@repo/ui/components/ui/avatar'
 import {
   Card,
   CardContent,
@@ -17,6 +21,7 @@ function ProfessorCard({ professor }: { professor: Professor }) {
             className="object-cover"
             draggable="false"
           />
+          <AvatarFallback>{professor.name}</AvatarFallback>
         </Avatar>
       </CardHeader>
       <CardContent>
