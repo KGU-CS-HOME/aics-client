@@ -31,10 +31,10 @@ function SiteHeader() {
               소개
             </Link>
             <Link
-              href="/professor"
+              href="/member"
               className={cn(
                 'hover:text-foreground/80 transition-colors',
-                pathname.startsWith('/professor')
+                pathname.startsWith('/member')
                   ? 'text-foreground'
                   : 'text-foreground/60',
               )}

@@ -15,12 +15,14 @@ import {
 
 const PATH_MAP = {
   about: '소개',
-  dept: '학부',
+  dept: '학부 소개',
   club: '동아리',
   curriculum: '교육과정',
   history: '연혁',
-  professor: '구성원',
+  member: '구성원',
+  professor: '교수진 소개',
   research: '연구',
+  lab: '연구실 소개',
   board: '게시판',
   notice: '공지사항',
   news: '학부 소식',
