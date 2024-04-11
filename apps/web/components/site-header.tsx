@@ -28,7 +28,7 @@ function SiteHeader() {
                   : 'text-foreground/60',
               )}
             >
-              학부소개
+              소개
             </Link>
             <Link
               href="/professor"
@@ -53,15 +53,15 @@ function SiteHeader() {
               연구
             </Link>
             <Link
-              href="/notice"
+              href="/board"
               className={cn(
                 'hover:text-foreground/80 transition-colors',
-                pathname.startsWith('/notice')
+                pathname.startsWith('/board')
                   ? 'text-foreground'
                   : 'text-foreground/60',
               )}
             >
-              공지사항
+              게시판
             </Link>
             <Link
               href="#"
