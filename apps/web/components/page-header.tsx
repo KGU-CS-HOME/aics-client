@@ -14,13 +14,16 @@ import {
 } from '@repo/ui/components/ui/breadcrumb'
 
 const PATH_MAP = {
-  about: '학부소개',
+  about: '소개',
+  dept: '학부',
   club: '동아리',
   curriculum: '교육과정',
   history: '연혁',
   professor: '구성원',
   research: '연구',
+  board: '게시판',
   notice: '공지사항',
+  news: '학부 소식',
 }
 
 function PageHeader({
