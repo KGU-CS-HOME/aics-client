@@ -12,21 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@repo/ui/components/ui/breadcrumb'
-
-const PATH_MAP = {
-  about: '소개',
-  dept: '학부 소개',
-  club: '동아리',
-  curriculum: '교육과정',
-  history: '연혁',
-  member: '구성원',
-  professor: '교수진 소개',
-  research: '연구',
-  lab: '연구실 소개',
-  board: '게시판',
-  notice: '공지사항',
-  news: '학부 소식',
-}
+import { PATHMAP, pathmapKey } from '../data/pathmap'
 
 function PageHeader({
   title,
@@ -40,7 +26,7 @@ function PageHeader({
   const paths = pathname.split('/').filter((path) => path !== '')
 
   return (
-    <div className="mb-6 flex flex-col gap-8 py-6">
+    <div className="mb-12 flex flex-col gap-8">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -51,17 +37,15 @@ function PageHeader({
           <BreadcrumbSeparator />
           {paths.map((path, index) =>
             index === paths.length - 1 ? (
-              <BreadcrumbItem>
-                <BreadcrumbPage>
-                  {PATH_MAP[path as keyof typeof PATH_MAP]}
-                </BreadcrumbPage>
+              <BreadcrumbItem key={`subpath-${index}`}>
+                <BreadcrumbPage>{PATHMAP[path as pathmapKey]}</BreadcrumbPage>
               </BreadcrumbItem>
             ) : (
               <Fragment key={`subpath-${index}`}>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link href={`/${paths.slice(0, index + 1).join('/')}`}>
-                      {PATH_MAP[path as keyof typeof PATH_MAP]}
+                      {PATHMAP[path as pathmapKey]}
                     </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
