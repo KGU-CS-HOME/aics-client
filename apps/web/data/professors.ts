@@ -7,7 +7,7 @@ interface Professor {
   email: string
 }
 
-const professors: Professor[] = [
+const PROFESSORS: Professor[] = [
   {
     id: 1,
     name: '권기현',
@@ -162,4 +162,4 @@ const professors: Professor[] = [
   },
 ]
 
-export { type Professor, professors }
+export { type Professor, PROFESSORS }

@@ -6,7 +6,7 @@ interface Lab {
   site: string
 }
 
-const labs: Lab[] = [
+const LABS: Lab[] = [
   {
     id: 1,
     name: '인공지능 연구실',
@@ -92,4 +92,4 @@ const labs: Lab[] = [
   },
 ]
 
-export { type Lab, labs }
+export { type Lab, LABS }

@@ -5,7 +5,7 @@ interface Club {
   site?: string
 }
 
-const clubs: Club[] = [
+const CLUBS: Club[] = [
   {
     id: 1,
     name: 'SSF',
@@ -38,4 +38,4 @@ const clubs: Club[] = [
   },
 ]
 
-export { type Club, clubs }
+export { type Club, CLUBS }

@@ -10,7 +10,7 @@ interface Page {
   subpath: Subpath[]
 }
 
-const pages: Page[] = [
+const PAGES: Page[] = [
   {
     id: 'about',
     base: '/about',
@@ -27,7 +27,7 @@ const pages: Page[] = [
       },
       {
         id: 'curriculum',
-        title: '교육 과정',
+        title: '교육과정',
         url: '/curriculum',
       },
       {
@@ -38,13 +38,13 @@ const pages: Page[] = [
     ],
   },
   {
-    id: 'professor',
-    base: '/professor',
+    id: 'member',
+    base: '/member',
     subpath: [
       {
         id: 'professor',
         title: '교수진 소개',
-        url: '/',
+        url: '/professor',
       },
     ],
   },
@@ -53,9 +53,9 @@ const pages: Page[] = [
     base: '/research',
     subpath: [
       {
-        id: 'research',
+        id: 'lab',
         title: '연구실 소개',
-        url: '/',
+        url: '/lab',
       },
     ],
   },
@@ -65,8 +65,8 @@ const pages: Page[] = [
     subpath: [
       {
         id: 'notice',
-        title: '공지사항',
-        url: '/',
+        title: '공지 사항',
+        url: '/notice',
       },
       {
         id: 'news',
@@ -77,4 +77,4 @@ const pages: Page[] = [
   },
 ]
 
-export { type Page, type Subpath, pages }
+export { type Page, type Subpath, PAGES }
