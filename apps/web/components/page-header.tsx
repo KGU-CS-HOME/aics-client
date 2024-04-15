@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { Fragment } from 'react'
 import { usePathname } from 'next/navigation'
+import { Link } from 'next-view-transitions'
 
 import {
   Breadcrumb,
