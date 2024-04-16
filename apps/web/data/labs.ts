@@ -85,8 +85,8 @@ const LABS: Lab[] = [
   },
   {
     id: 12,
-    name: 'CVPR 연구실',
-    img: 'https://www.kyonggi.ac.kr/site/u_ai/images/contents/key9123_img11.png',
+    name: '비전 인공지능 연구실',
+    img: 'https://www.kyonggi.ac.kr/downloadContentsFile.do?key=9123&fileNo=1258',
     location: '제2공학관 615호',
     site: 'https://sites.google.com/kyonggi.ac.kr/cvpr/%ED%99%88',
   },
