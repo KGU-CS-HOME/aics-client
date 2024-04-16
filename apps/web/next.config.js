@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -9,6 +9,7 @@ module.exports = {
       },
     ],
   },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   transpilePackages: ['@repo/ui'],
   webpack: (config) => {
     config.module.rules.push({
@@ -19,3 +20,6 @@ module.exports = {
     return config
   },
 }
+
+const withMDX = require('@next/mdx')()
+module.exports = withMDX(nextConfig)

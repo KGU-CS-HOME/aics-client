@@ -8,6 +8,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     '../../packages/ui/src/**/*.{ts,tsx}',
+    './mdx-components.tsx',
   ],
   prefix: '',
   theme: {
