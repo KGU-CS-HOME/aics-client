@@ -4,6 +4,7 @@ const PATHMAP = {
   about: '소개',
   dept: '학부 소개',
   club: '동아리',
+  contact: '찾아오시는 길',
   curriculum: '교육과정',
   history: '연혁',
   member: '구성원',

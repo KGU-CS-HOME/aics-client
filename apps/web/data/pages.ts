@@ -21,9 +21,14 @@ const PAGES: Page[] = [
         url: '/dept',
       },
       {
-        id: 'club',
-        title: '동아리',
-        url: '/club',
+        id: 'history',
+        title: '연혁',
+        url: '/history',
+      },
+      {
+        id: 'contact',
+        title: '찾아오시는 길',
+        url: '/contact',
       },
       {
         id: 'curriculum',
@@ -31,9 +36,9 @@ const PAGES: Page[] = [
         url: '/curriculum',
       },
       {
-        id: 'history',
-        title: '연혁',
-        url: '/history',
+        id: 'club',
+        title: '동아리',
+        url: '/club',
       },
     ],
   },
