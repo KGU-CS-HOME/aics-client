@@ -1,13 +1,13 @@
 'use client'
 
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Link } from 'next-view-transitions'
 
+import { cn } from '@repo/ui/lib/utils'
 import { buttonVariants } from '@repo/ui/components/ui/button'
+import { Separator } from '@repo/ui/components/ui/separator'
 import { PAGES } from '../data/pages'
 import { PATHMAP, pathmapKey } from '../data/pathmap'
-import { cn } from '@repo/ui/lib/utils'
-import { Separator } from '@repo/ui/components/ui/separator'
 
 function LeftNavigationBar() {
   const pathname = usePathname()

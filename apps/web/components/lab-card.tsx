@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import { Link } from 'next-view-transitions'
 
 import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
 import { Card, CardHeader, CardTitle } from '@repo/ui/components/ui/card'

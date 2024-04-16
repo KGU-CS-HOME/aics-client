@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { ViewTransitions } from 'next-view-transitions'
 
 import '@repo/ui/globals.css'
 import { cn } from '@repo/ui/lib/utils'
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={cn('bg-background antialiased', wantedSans.className)}>
-        {children}
+        <ViewTransitions>{children}</ViewTransitions>
       </body>
     </html>
   )
