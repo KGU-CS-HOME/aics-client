@@ -6,7 +6,7 @@ export default function AuthLayout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <div className="grid min-h-screen w-full lg:grid-cols-2">
+    <div className="grid min-h-dvh w-full lg:grid-cols-2">
       <div className="flex items-center justify-center py-12">{children}</div>
       <div className="bg-muted hidden lg:block">
         <Image
