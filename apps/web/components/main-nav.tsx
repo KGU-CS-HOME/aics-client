@@ -1,7 +1,8 @@
 'use client'
 
 import { forwardRef } from 'react'
-import Link from 'next/link'
+import type NextLink from 'next/link'
+import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
 
 import { cn } from '@repo/ui/lib/utils'
@@ -16,8 +17,8 @@ import {
 import KGULogo from '../assets/svgs/kgu_logo.svg'
 
 const ListItem = forwardRef<
-  React.ElementRef<typeof Link>,
-  React.ComponentPropsWithoutRef<typeof Link>
+  React.ElementRef<typeof NextLink>,
+  React.ComponentPropsWithoutRef<typeof NextLink>
 >(({ className, title, ...props }, ref) => {
   return (
     <li>
