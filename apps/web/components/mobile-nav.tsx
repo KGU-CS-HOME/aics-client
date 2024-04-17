@@ -60,7 +60,7 @@ function MobileNav() {
           <KGULogo className="mr-2 w-16" />
           <span className="font-extrabold">AI컴퓨터공학부</span>
         </MobileLink>
-        <ScrollArea className="mt-8 h-[calc(100vh-8rem)]">
+        <ScrollArea className="mt-8 h-[calc(100dvh-8rem)]">
           <div className="flex flex-col space-y-2">
             <div className="flex flex-col space-y-3">
               <h4 className="font-medium">소개</h4>
