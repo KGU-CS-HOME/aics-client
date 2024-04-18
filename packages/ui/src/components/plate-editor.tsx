@@ -49,16 +49,7 @@ import {
   ELEMENT_MEDIA_EMBED,
 } from '@udecode/plate-media'
 import { createCaptionPlugin } from '@udecode/plate-caption'
-import {
-  createMentionPlugin,
-  ELEMENT_MENTION,
-  ELEMENT_MENTION_INPUT,
-} from '@udecode/plate-mention'
 import { createTodoListPlugin, ELEMENT_TODO_LI } from '@udecode/plate-list'
-import {
-  createExcalidrawPlugin,
-  ELEMENT_EXCALIDRAW,
-} from '@udecode/plate-excalidraw'
 import { createTogglePlugin, ELEMENT_TOGGLE } from '@udecode/plate-toggle'
 import {
   createTablePlugin,
@@ -176,9 +167,7 @@ const plugins = createPlugins(
         pluginKeys: [ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED],
       },
     }),
-    createMentionPlugin(),
     createTodoListPlugin(),
-    createExcalidrawPlugin(),
     createTogglePlugin(),
     createTablePlugin(),
     createBoldPlugin(),
