@@ -26,7 +26,9 @@ import {
   getBoundingClientRect,
 } from '@udecode/plate-floating'
 
-export const ComboboxItem = withRef<'div', ComboboxContentItemProps>(
+export const ComboboxItem: ReturnType<
+  typeof withRef<'div', ComboboxContentItemProps>
+> = withRef<'div', ComboboxContentItemProps>(
   ({ combobox, index, item, onRenderItem, className, ...rest }, ref) => {
     const { props } = useComboboxItem({ item, index, combobox, onRenderItem })
 

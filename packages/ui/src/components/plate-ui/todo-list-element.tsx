@@ -8,8 +8,8 @@ import {
 
 import { Checkbox } from './checkbox'
 
-export const TodoListElement = withRef<typeof PlateElement>(
-  ({ className, children, ...props }, ref) => {
+export const TodoListElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
     const { element } = props
     const state = useTodoListElementState({ element })
     const { checkboxProps } = useTodoListElement(state)
@@ -38,5 +38,4 @@ export const TodoListElement = withRef<typeof PlateElement>(
         </span>
       </PlateElement>
     )
-  },
-)
+  })

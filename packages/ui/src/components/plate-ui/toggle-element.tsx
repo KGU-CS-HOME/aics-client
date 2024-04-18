@@ -4,8 +4,8 @@ import { useToggleButton, useToggleButtonState } from '@udecode/plate-toggle'
 
 import { Icons } from '@ui/components/icons'
 
-export const ToggleElement = withRef<typeof PlateElement>(
-  ({ children, ...props }, ref) => {
+export const ToggleElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withRef<typeof PlateElement>(({ children, ...props }, ref) => {
     const element = useElement()
     const state = useToggleButtonState(element.id as string)
     const { open, buttonProps } = useToggleButton(state)
@@ -24,5 +24,4 @@ export const ToggleElement = withRef<typeof PlateElement>(
         </div>
       </PlateElement>
     )
-  },
-)
+  })

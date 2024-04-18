@@ -9,8 +9,8 @@ import { PlateElement } from '@udecode/plate-common'
 
 import { CodeBlockCombobox } from './code-block-combobox'
 
-export const CodeBlockElement = withRef<typeof PlateElement>(
-  ({ className, children, ...props }, ref) => {
+export const CodeBlockElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
     const { element } = props
     const state = useCodeBlockElementState({ element })
 
@@ -34,5 +34,4 @@ export const CodeBlockElement = withRef<typeof PlateElement>(
         )}
       </PlateElement>
     )
-  },
-)
+  })

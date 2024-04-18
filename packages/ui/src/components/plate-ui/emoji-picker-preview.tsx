@@ -15,7 +15,7 @@ function EmojiPreview({ emoji }: EmojiPreviewProps) {
   return (
     <div className="flex items-center border-t border-gray-100 p-2">
       <div className="flex items-center justify-center text-3xl">
-        {emoji?.skins[0].native}
+        {emoji?.skins[0]?.native}
       </div>
       <div className="overflow-hidden pl-2">
         <div className="truncate text-sm text-gray-600">{emoji?.name}</div>

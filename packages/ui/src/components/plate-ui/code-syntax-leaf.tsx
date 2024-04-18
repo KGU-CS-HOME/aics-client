@@ -5,8 +5,8 @@ import { withRef } from '@udecode/cn'
 import { useCodeSyntaxLeaf } from '@udecode/plate-code-block'
 import { PlateLeaf } from '@udecode/plate-common'
 
-export const CodeSyntaxLeaf = withRef<typeof PlateLeaf>(
-  ({ children, ...props }, ref) => {
+export const CodeSyntaxLeaf: ReturnType<typeof withRef<typeof PlateLeaf>> =
+  withRef<typeof PlateLeaf>(({ children, ...props }, ref) => {
     const { leaf } = props
 
     const { tokenProps } = useCodeSyntaxLeaf({ leaf })
@@ -16,5 +16,4 @@ export const CodeSyntaxLeaf = withRef<typeof PlateLeaf>(
         <span {...tokenProps}>{children}</span>
       </PlateLeaf>
     )
-  },
-)
+  })

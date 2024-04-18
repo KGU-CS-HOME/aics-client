@@ -15,7 +15,9 @@ import { Caption, CaptionTextarea } from './caption'
 import { MediaPopover } from './media-popover'
 import { mediaResizeHandleVariants, Resizable, ResizeHandle } from './resizable'
 
-export const MediaEmbedElement = withHOC(
+export const MediaEmbedElement: ReturnType<
+  typeof withRef<typeof PlateElement>
+> = withHOC(
   ResizableProvider,
   withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
     const {

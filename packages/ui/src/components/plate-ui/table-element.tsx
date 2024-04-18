@@ -195,45 +195,46 @@ export const TableFloatingToolbar = withRef<typeof PopoverContent>(
   },
 )
 
-export const TableElement = withHOC(
-  TableProvider,
-  withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
-    const { colSizes, isSelectingCell, minColumnWidth, marginLeft } =
-      useTableElementState()
-    const { props: tableProps, colGroupProps } = useTableElement()
+export const TableElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withHOC(
+    TableProvider,
+    withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
+      const { colSizes, isSelectingCell, minColumnWidth, marginLeft } =
+        useTableElementState()
+      const { props: tableProps, colGroupProps } = useTableElement()
 
-    return (
-      <TableFloatingToolbar>
-        <div style={{ paddingLeft: marginLeft }}>
-          <PlateElement
-            ref={ref}
-            asChild
-            className={cn(
-              'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
-              isSelectingCell && '[&_*::selection]:bg-none',
-              className,
-            )}
-            {...tableProps}
-            {...props}
-          >
-            <table>
-              <colgroup {...colGroupProps}>
-                {colSizes.map((width, index) => (
-                  <col
-                    key={index}
-                    style={{
-                      minWidth: minColumnWidth,
-                      width: width || undefined,
-                    }}
-                  />
-                ))}
-              </colgroup>
+      return (
+        <TableFloatingToolbar>
+          <div style={{ paddingLeft: marginLeft }}>
+            <PlateElement
+              ref={ref}
+              asChild
+              className={cn(
+                'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
+                isSelectingCell && '[&_*::selection]:bg-none',
+                className,
+              )}
+              {...tableProps}
+              {...props}
+            >
+              <table>
+                <colgroup {...colGroupProps}>
+                  {colSizes.map((width, index) => (
+                    <col
+                      key={index}
+                      style={{
+                        minWidth: minColumnWidth,
+                        width: width || undefined,
+                      }}
+                    />
+                  ))}
+                </colgroup>
 
-              <tbody className="min-w-full">{children}</tbody>
-            </table>
-          </PlateElement>
-        </div>
-      </TableFloatingToolbar>
-    )
-  }),
-)
+                <tbody className="min-w-full">{children}</tbody>
+              </table>
+            </PlateElement>
+          </div>
+        </TableFloatingToolbar>
+      )
+    }),
+  )

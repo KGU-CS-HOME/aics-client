@@ -2,8 +2,8 @@ import React from 'react'
 import { cn, withRef } from '@udecode/cn'
 import { PlateLeaf } from '@udecode/plate-common'
 
-export const HighlightLeaf = withRef<typeof PlateLeaf>(
-  ({ className, children, ...props }, ref) => (
+export const HighlightLeaf: ReturnType<typeof withRef<typeof PlateLeaf>> =
+  withRef<typeof PlateLeaf>(({ className, children, ...props }, ref) => (
     <PlateLeaf
       ref={ref}
       asChild
@@ -12,5 +12,4 @@ export const HighlightLeaf = withRef<typeof PlateLeaf>(
     >
       <mark>{children}</mark>
     </PlateLeaf>
-  ),
-)
+  ))

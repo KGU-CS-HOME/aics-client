@@ -3,8 +3,8 @@ import { cn, withRef } from '@udecode/cn'
 import { PlateElement, useElement } from '@udecode/plate-common'
 import { TLinkElement, useLink } from '@udecode/plate-link'
 
-export const LinkElement = withRef<typeof PlateElement>(
-  ({ className, children, ...props }, ref) => {
+export const LinkElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withRef<typeof PlateElement>(({ className, children, ...props }, ref) => {
     const element = useElement<TLinkElement>()
     const { props: linkProps } = useLink({ element })
 
@@ -22,5 +22,4 @@ export const LinkElement = withRef<typeof PlateElement>(
         <a>{children}</a>
       </PlateElement>
     )
-  },
-)
+  })

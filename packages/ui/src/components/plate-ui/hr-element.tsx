@@ -3,8 +3,8 @@ import { cn, withRef } from '@udecode/cn'
 import { PlateElement } from '@udecode/plate-common'
 import { useFocused, useSelected } from 'slate-react'
 
-export const HrElement = withRef<typeof PlateElement>(
-  ({ className, nodeProps, ...props }, ref) => {
+export const HrElement: ReturnType<typeof withRef<typeof PlateElement>> =
+  withRef<typeof PlateElement>(({ className, nodeProps, ...props }, ref) => {
     const { children } = props
 
     const selected = useSelected()
@@ -25,5 +25,4 @@ export const HrElement = withRef<typeof PlateElement>(
         {children}
       </PlateElement>
     )
-  },
-)
+  })

@@ -10,7 +10,15 @@ import {
 
 import { ResizeHandle } from './resizable'
 
-export const TableCellElement = withRef<
+export const TableCellElement: ReturnType<
+  typeof withRef<
+    typeof PlateElement,
+    {
+      hideBorder?: boolean
+      isHeader?: boolean
+    }
+  >
+> = withRef<
   typeof PlateElement,
   {
     hideBorder?: boolean
@@ -136,6 +144,8 @@ export const TableCellElement = withRef<
 })
 TableCellElement.displayName = 'TableCellElement'
 
-export const TableCellHeaderElement = withProps(TableCellElement, {
+export const TableCellHeaderElement: ReturnType<
+  typeof withProps<typeof TableCellElement>
+> = withProps(TableCellElement, {
   isHeader: true,
 })

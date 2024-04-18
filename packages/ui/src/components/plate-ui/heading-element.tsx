@@ -20,12 +20,13 @@ const headingVariants = cva('', {
   },
 })
 
-const HeadingElementVariants = withVariants(PlateElement, headingVariants, [
-  'isFirstBlock',
-  'variant',
-])
+const HeadingElementVariants: ReturnType<
+  typeof withVariants<typeof PlateElement, typeof headingVariants>
+> = withVariants(PlateElement, headingVariants, ['isFirstBlock', 'variant'])
 
-export const HeadingElement = withRef<typeof HeadingElementVariants>(
+export const HeadingElement: ReturnType<
+  typeof withRef<typeof HeadingElementVariants>
+> = withRef<typeof HeadingElementVariants>(
   ({ variant = 'h1', isFirstBlock, children, ...props }, ref) => {
     const { element, editor } = props
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { cn } from '@udecode/cn'
 import { PlateContent } from '@udecode/plate-common'
 import { cva } from 'class-variance-authority'
@@ -46,42 +46,43 @@ const editorVariants = cva(
 export type EditorProps = PlateContentProps &
   VariantProps<typeof editorVariants>
 
-const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
-  (
-    {
-      className,
-      disabled,
-      focused,
-      focusRing,
-      readOnly,
-      size,
-      variant,
-      ...props
+const Editor: ReturnType<typeof forwardRef<HTMLDivElement, EditorProps>> =
+  React.forwardRef<HTMLDivElement, EditorProps>(
+    (
+      {
+        className,
+        disabled,
+        focused,
+        focusRing,
+        readOnly,
+        size,
+        variant,
+        ...props
+      },
+      ref,
+    ) => {
+      return (
+        <div ref={ref} className="relative w-full">
+          <PlateContent
+            className={cn(
+              editorVariants({
+                disabled,
+                focused,
+                focusRing,
+                size,
+                variant,
+              }),
+              className,
+            )}
+            disableDefaultStyles
+            readOnly={disabled ?? readOnly}
+            aria-disabled={disabled}
+            {...props}
+          />
+        </div>
+      )
     },
-    ref,
-  ) => {
-    return (
-      <div ref={ref} className="relative w-full">
-        <PlateContent
-          className={cn(
-            editorVariants({
-              disabled,
-              focused,
-              focusRing,
-              size,
-              variant,
-            }),
-            className,
-          )}
-          disableDefaultStyles
-          readOnly={disabled ?? readOnly}
-          aria-disabled={disabled}
-          {...props}
-        />
-      </div>
-    )
-  },
-)
+  )
 Editor.displayName = 'Editor'
 
 export { Editor }

@@ -22,7 +22,9 @@ export const Caption = withVariants(CaptionPrimitive, captionVariants, [
   'align',
 ])
 
-export const CaptionTextarea = withCn(
+export const CaptionTextarea: ReturnType<
+  typeof withCn<typeof CaptionTextareaPrimitive>
+> = withCn(
   CaptionTextareaPrimitive,
   cn(
     'mt-2 w-full resize-none border-none bg-inherit p-0 font-[inherit] text-inherit',
