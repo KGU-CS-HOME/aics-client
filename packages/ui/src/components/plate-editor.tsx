@@ -1,11 +1,15 @@
 'use client'
 
-import { withProps } from '@udecode/cn'
+import { useRef } from 'react'
+
+import { cn, withProps } from '@udecode/cn'
 import {
   createPlugins,
   Plate,
   RenderAfterEditable,
   PlateLeaf,
+  isBlockAboveEmpty,
+  isSelectionAtBlockStart,
 } from '@udecode/plate-common'
 import {
   createParagraphPlugin,
@@ -29,6 +33,9 @@ import {
   ELEMENT_CODE_BLOCK,
   ELEMENT_CODE_LINE,
   ELEMENT_CODE_SYNTAX,
+  isCodeBlockEmpty,
+  isSelectionAtCodeBlockStart,
+  unwrapCodeBlock,
 } from '@udecode/plate-code-block'
 import {
   createHorizontalRulePlugin,
@@ -101,11 +108,6 @@ import { createResetNodePlugin } from '@udecode/plate-reset-node'
 import { createDeletePlugin } from '@udecode/plate-select'
 import { createTabbablePlugin } from '@udecode/plate-tabbable'
 import { createTrailingBlockPlugin } from '@udecode/plate-trailing-block'
-import {
-  createCommentsPlugin,
-  CommentsProvider,
-  MARK_COMMENT,
-} from '@udecode/plate-comments'
 import { createDeserializeDocxPlugin } from '@udecode/plate-serializer-docx'
 import { createDeserializeCsvPlugin } from '@udecode/plate-serializer-csv'
 import { createDeserializeMdPlugin } from '@udecode/plate-serializer-md'
@@ -117,7 +119,6 @@ import { BlockquoteElement } from '@ui/components/plate-ui/blockquote-element'
 import { CodeBlockElement } from '@ui/components/plate-ui/code-block-element'
 import { CodeLineElement } from '@ui/components/plate-ui/code-line-element'
 import { CodeSyntaxLeaf } from '@ui/components/plate-ui/code-syntax-leaf'
-import { ExcalidrawElement } from '@ui/components/plate-ui/excalidraw-element'
 import { HrElement } from '@ui/components/plate-ui/hr-element'
 import { ImageElement } from '@ui/components/plate-ui/image-element'
 import { LinkElement } from '@ui/components/plate-ui/link-element'
@@ -125,9 +126,6 @@ import { LinkFloatingToolbar } from '@ui/components/plate-ui/link-floating-toolb
 import { ToggleElement } from '@ui/components/plate-ui/toggle-element'
 import { HeadingElement } from '@ui/components/plate-ui/heading-element'
 import { MediaEmbedElement } from '@ui/components/plate-ui/media-embed-element'
-import { MentionElement } from '@ui/components/plate-ui/mention-element'
-import { MentionInputElement } from '@ui/components/plate-ui/mention-input-element'
-import { MentionCombobox } from '@ui/components/plate-ui/mention-combobox'
 import { ParagraphElement } from '@ui/components/plate-ui/paragraph-element'
 import { TableElement } from '@ui/components/plate-ui/table-element'
 import { TableRowElement } from '@ui/components/plate-ui/table-row-element'
@@ -137,8 +135,6 @@ import {
 } from '@ui/components/plate-ui/table-cell-element'
 import { TodoListElement } from '@ui/components/plate-ui/todo-list-element'
 import { CodeLeaf } from '@ui/components/plate-ui/code-leaf'
-import { CommentLeaf } from '@ui/components/plate-ui/comment-leaf'
-import { CommentsPopover } from '@ui/components/plate-ui/comments-popover'
 import { HighlightLeaf } from '@ui/components/plate-ui/highlight-leaf'
 import { KbdLeaf } from '@ui/components/plate-ui/kbd-leaf'
 import { Editor } from '@ui/components/plate-ui/editor'
@@ -150,6 +146,18 @@ import { withPlaceholders } from '@ui/components/plate-ui/placeholder'
 import { withDraggables } from '@ui/components/plate-ui/with-draggables'
 import { EmojiCombobox } from '@ui/components/plate-ui/emoji-combobox'
 import { TooltipProvider } from '@ui/components/plate-ui/tooltip'
+import { CursorOverlay } from './plate-ui/cursor-overlay'
+
+const resetBlockTypesCommonRule = {
+  types: [ELEMENT_BLOCKQUOTE, ELEMENT_TODO_LI],
+  defaultType: ELEMENT_PARAGRAPH,
+}
+
+const resetBlockTypesCodeBlockRule = {
+  types: [ELEMENT_CODE_BLOCK],
+  defaultType: ELEMENT_PARAGRAPH,
+  onReset: unwrapCodeBlock,
+}
 
 const plugins = createPlugins(
   [
@@ -165,9 +173,7 @@ const plugins = createPlugins(
     createMediaEmbedPlugin(),
     createCaptionPlugin({
       options: {
-        pluginKeys: [
-          // ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED
-        ],
+        pluginKeys: [ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED],
       },
     }),
     createMentionPlugin(),
@@ -190,10 +196,7 @@ const plugins = createPlugins(
     createAlignPlugin({
       inject: {
         props: {
-          validTypes: [
-            ELEMENT_PARAGRAPH,
-            // ELEMENT_H1, ELEMENT_H2, ELEMENT_H3
-          ],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
         },
       },
     }),
@@ -202,7 +205,11 @@ const plugins = createPlugins(
         props: {
           validTypes: [
             ELEMENT_PARAGRAPH,
-            // ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK
+            ELEMENT_H1,
+            ELEMENT_H2,
+            ELEMENT_H3,
+            ELEMENT_BLOCKQUOTE,
+            ELEMENT_CODE_BLOCK,
           ],
         },
       },
@@ -212,7 +219,11 @@ const plugins = createPlugins(
         props: {
           validTypes: [
             ELEMENT_PARAGRAPH,
-            // ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK
+            ELEMENT_H1,
+            ELEMENT_H2,
+            ELEMENT_H3,
+            ELEMENT_BLOCKQUOTE,
+            ELEMENT_CODE_BLOCK,
           ],
         },
       },
@@ -222,10 +233,7 @@ const plugins = createPlugins(
         props: {
           defaultNodeValue: 1.5,
           validNodeValues: [1, 1.2, 1.5, 2, 3],
-          validTypes: [
-            ELEMENT_PARAGRAPH,
-            // ELEMENT_H1, ELEMENT_H2, ELEMENT_H3
-          ],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
         },
       },
     }),
@@ -279,7 +287,26 @@ const plugins = createPlugins(
     createResetNodePlugin({
       options: {
         rules: [
-          // Usage: https://platejs.org/docs/reset-node
+          {
+            ...resetBlockTypesCommonRule,
+            hotkey: 'Enter',
+            predicate: isBlockAboveEmpty,
+          },
+          {
+            ...resetBlockTypesCommonRule,
+            hotkey: 'Backspace',
+            predicate: isSelectionAtBlockStart,
+          },
+          {
+            ...resetBlockTypesCodeBlockRule,
+            hotkey: 'Enter',
+            predicate: isCodeBlockEmpty,
+          },
+          {
+            ...resetBlockTypesCodeBlockRule,
+            hotkey: 'Backspace',
+            predicate: isSelectionAtCodeBlockStart,
+          },
         ],
       },
     }),
@@ -291,9 +318,7 @@ const plugins = createPlugins(
           {
             hotkey: 'enter',
             query: {
-              allow: [
-                // ELEMENT_CODE_BLOCK, ELEMENT_BLOCKQUOTE, ELEMENT_TD
-              ],
+              allow: [ELEMENT_CODE_BLOCK, ELEMENT_BLOCKQUOTE, ELEMENT_TD],
             },
           },
         ],
@@ -303,7 +328,6 @@ const plugins = createPlugins(
     createTrailingBlockPlugin({
       options: { type: ELEMENT_PARAGRAPH },
     }),
-    createCommentsPlugin(),
     createDeserializeDocxPlugin(),
     createDeserializeCsvPlugin(),
     createDeserializeMdPlugin(),
@@ -316,7 +340,6 @@ const plugins = createPlugins(
         [ELEMENT_CODE_BLOCK]: CodeBlockElement,
         [ELEMENT_CODE_LINE]: CodeLineElement,
         [ELEMENT_CODE_SYNTAX]: CodeSyntaxLeaf,
-        [ELEMENT_EXCALIDRAW]: ExcalidrawElement,
         [ELEMENT_HR]: HrElement,
         [ELEMENT_IMAGE]: ImageElement,
         [ELEMENT_LINK]: LinkElement,
@@ -328,8 +351,6 @@ const plugins = createPlugins(
         [ELEMENT_H5]: withProps(HeadingElement, { variant: 'h5' }),
         [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
         [ELEMENT_MEDIA_EMBED]: MediaEmbedElement,
-        [ELEMENT_MENTION]: MentionElement,
-        [ELEMENT_MENTION_INPUT]: MentionInputElement,
         [ELEMENT_PARAGRAPH]: ParagraphElement,
         [ELEMENT_TABLE]: TableElement,
         [ELEMENT_TR]: TableRowElement,
@@ -338,7 +359,6 @@ const plugins = createPlugins(
         [ELEMENT_TODO_LI]: TodoListElement,
         [MARK_BOLD]: withProps(PlateLeaf, { as: 'strong' }),
         [MARK_CODE]: CodeLeaf,
-        [MARK_COMMENT]: CommentLeaf,
         [MARK_HIGHLIGHT]: HighlightLeaf,
         [MARK_ITALIC]: withProps(PlateLeaf, { as: 'em' }),
         [MARK_KBD]: KbdLeaf,
@@ -351,33 +371,47 @@ const plugins = createPlugins(
   },
 )
 
-const initialValue = [
-  {
-    id: '1',
-    type: 'p',
-    children: [{ text: 'Hello, World!' }],
-  },
-]
-
 export function PlateEditor() {
+  const containerRef = useRef(null)
+
+  const initialValue = [
+    {
+      id: '1',
+      type: 'p',
+      children: [{ text: 'Hello, World!' }],
+    },
+  ]
+
   return (
     <TooltipProvider>
       <DndProvider backend={HTML5Backend}>
-        <CommentsProvider users={{}} myUserId="1">
-          <Plate plugins={plugins} initialValue={initialValue}>
+        <Plate plugins={plugins} initialValue={initialValue}>
+          <div
+            ref={containerRef}
+            className={cn(
+              'relative',
+              '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4',
+            )}
+          >
             <FixedToolbar>
               <FixedToolbarButtons />
             </FixedToolbar>
 
-            <Editor />
+            <Editor
+              className="px-[96px] py-16"
+              autoFocus
+              focusRing={false}
+              variant="ghost"
+              size="md"
+            />
 
             <FloatingToolbar>
               <FloatingToolbarButtons />
             </FloatingToolbar>
-            <MentionCombobox items={[]} />
-            <CommentsPopover />
-          </Plate>
-        </CommentsProvider>
+
+            <CursorOverlay containerRef={containerRef} />
+          </div>
+        </Plate>
       </DndProvider>
     </TooltipProvider>
   )

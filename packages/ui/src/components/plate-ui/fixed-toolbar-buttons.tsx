@@ -8,13 +8,27 @@ import {
 } from '@udecode/plate-basic-marks'
 import { useEditorReadOnly } from '@udecode/plate-common'
 
-import { Icons } from '@ui/components/icons'
+import { Icons, iconVariants } from '@ui/components/icons'
 
 import { InsertDropdownMenu } from './insert-dropdown-menu'
 import { MarkToolbarButton } from './mark-toolbar-button'
 import { ModeDropdownMenu } from './mode-dropdown-menu'
 import { ToolbarGroup } from './toolbar'
 import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu'
+import { ColorDropdownMenu } from './color-dropdown-menu'
+import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font'
+import { AlignDropdownMenu } from './align-dropdown-menu'
+import { LineHeightDropdownMenu } from './line-height-dropdown-menu'
+import { IndentListToolbarButton } from './indent-list-toolbar-button'
+import { ListStyleType } from '@udecode/plate-indent-list'
+import { OutdentToolbarButton } from './outdent-toolbar-button'
+import { IndentToolbarButton } from './indent-toolbar-button'
+import { LinkToolbarButton } from './link-toolbar-button'
+import { MediaToolbarButton } from './media-toolbar-button'
+import { TableDropdownMenu } from './table-dropdown-menu'
+import { ELEMENT_IMAGE } from '@udecode/plate-media'
+import { EmojiDropdownMenu } from './emoji-dropdown-menu'
+import { MoreDropdownMenu } from './more-dropdown-menu'
 
 export function FixedToolbarButtons() {
   const readOnly = useEditorReadOnly()
@@ -57,6 +71,39 @@ export function FixedToolbarButtons() {
               <MarkToolbarButton tooltip="Code (⌘+E)" nodeType={MARK_CODE}>
                 <Icons.code />
               </MarkToolbarButton>
+              <ColorDropdownMenu nodeType={MARK_COLOR} tooltip="Text Color">
+                <Icons.color className={iconVariants({ variant: 'toolbar' })} />
+              </ColorDropdownMenu>
+              <ColorDropdownMenu
+                nodeType={MARK_BG_COLOR}
+                tooltip="Highlight Color"
+              >
+                <Icons.bg className={iconVariants({ variant: 'toolbar' })} />
+              </ColorDropdownMenu>
+            </ToolbarGroup>
+
+            <ToolbarGroup>
+              <AlignDropdownMenu />
+
+              <LineHeightDropdownMenu />
+
+              <IndentListToolbarButton nodeType={ListStyleType.Disc} />
+              <IndentListToolbarButton nodeType={ListStyleType.Decimal} />
+
+              <OutdentToolbarButton />
+              <IndentToolbarButton />
+            </ToolbarGroup>
+
+            <ToolbarGroup>
+              <LinkToolbarButton />
+
+              <MediaToolbarButton nodeType={ELEMENT_IMAGE} />
+
+              <TableDropdownMenu />
+
+              <EmojiDropdownMenu />
+
+              <MoreDropdownMenu />
             </ToolbarGroup>
           </>
         )}
