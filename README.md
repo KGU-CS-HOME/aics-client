@@ -23,13 +23,13 @@
 ### Build
 
 ```
-cd my-turborepo
+cd aics-client
 pnpm build
 ```
 
 ### Develop
 
 ```
-cd my-turborepo
+cd aics-client
 pnpm dev
 ```
