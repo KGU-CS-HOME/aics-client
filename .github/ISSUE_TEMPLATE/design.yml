@@ -1,6 +1,6 @@
-name: "🎨 Design"
-description: "퍼블리싱 혹은 스타일링이 필요한 부분이 있나요?"
-labels: "🎨 Design
+name: '🎨 Design'
+description: '퍼블리싱 혹은 스타일링이 필요한 부분이 있나요?'
+labels: '🎨 Design'
 body:
   - type: textarea
     attributes:
