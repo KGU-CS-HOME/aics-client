@@ -33,3 +33,8 @@ pnpm build
 cd aics-client
 pnpm dev
 ```
+
+## Contributors
+<a href="https://github.com/KGU-CS-HOME/aics-client/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=KGU-CS-HOME/aics-client" />
+</a>
