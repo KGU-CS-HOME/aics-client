@@ -18,6 +18,7 @@ const nextConfig = {
     })
 
     config.resolve.alias.canvas = false
+    config.optimization.minimize = false
 
     return config
   },
