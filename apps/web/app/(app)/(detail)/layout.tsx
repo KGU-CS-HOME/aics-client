@@ -6,7 +6,7 @@ export default function LnbLayout({ children }: { children: React.ReactNode }) {
       <div className="hidden w-64 lg:block">
         <LeftNavigationBar />
       </div>
-      <div className="w-full max-w-screen-xl">{children}</div>
+      <div className="flex-1 overflow-hidden">{children}</div>
     </div>
   )
 }
