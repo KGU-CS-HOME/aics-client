@@ -17,6 +17,9 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     })
 
+    config.resolve.alias.canvas = false
+    config.optimization.minimize = false
+
     return config
   },
 }
