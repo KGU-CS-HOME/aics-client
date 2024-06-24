@@ -17,7 +17,7 @@ function ClubCard({ club }: ClubCardProps) {
           <AspectRatio ratio={2 / 1}>
             <Image
               src={club.img || 'https://placehold.co/200x100'}
-              alt="club-logo"
+              alt={`${club.name}-image`}
               draggable={false}
               fill
               className="rounded-md object-contain"
