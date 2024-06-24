@@ -3,15 +3,20 @@ import type { Club } from '../data/clubs'
 import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
 import Image from 'next/image'
 import { Link } from 'next-view-transitions'
+import { SetStateAction } from 'react'
 
-function ClubCard({ club }: { club: Club }) {
+interface ClubCardProps {
+  club: Club
+}
+
+function ClubCard({ club }: ClubCardProps) {
   return (
     <Card>
-      <CardHeader className="flex-row items-center gap-6">
-        <div className="hidden w-32 sm:block">
-          <AspectRatio ratio={1 / 1}>
+      <CardHeader className="flex-col gap-6">
+        <div className="hidden w-full sm:block">
+          <AspectRatio ratio={2 / 1}>
             <Image
-              src={club.img || 'https://placehold.co/128'}
+              src={club.img || 'https://placehold.co/200x100'}
               alt="club-logo"
               draggable={false}
               fill
@@ -19,24 +24,24 @@ function ClubCard({ club }: { club: Club }) {
             />
           </AspectRatio>
         </div>
-        <div className="flex w-full flex-col gap-2">
-          <CardTitle className="mb-2">{club.name}</CardTitle>
-          <p>{club.description}</p>
 
-          <p>
-            홈페이지 -{' '}
-            {club.site ? (
-              <Link
-                href={club.site ? club.site : ''}
-                target="_blank"
-                className="font-medium underline underline-offset-2"
-              >
-                바로가기
-              </Link>
-            ) : (
-              <span>아직 준비 중이에요.</span>
+        <div className="flex w-full flex-col gap-2">
+          <CardTitle className="text-xl">{club.name}</CardTitle>
+          <p>{club.description}</p>
+          <div className="flex w-full justify-between">
+            {club.site && (
+              <p>
+                홈페이지 -{' '}
+                <Link
+                  href={club.site}
+                  target="_blank"
+                  className="font-medium underline underline-offset-2"
+                >
+                  바로가기
+                </Link>
+              </p>
             )}
-          </p>
+          </div>
         </div>
       </CardHeader>
     </Card>
