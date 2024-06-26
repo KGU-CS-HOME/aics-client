@@ -1,4 +1,5 @@
 # KGU-AICS
+
 경기대학교 AI컴퓨터공학부 홈페이지 프론트엔드 레포지토리입니다.
 
 ## What's inside?
@@ -35,6 +36,7 @@ pnpm dev
 ```
 
 ## Contributors
+
 <a href="https://github.com/KGU-CS-HOME/aics-client/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=KGU-CS-HOME/aics-client" />
 </a>
