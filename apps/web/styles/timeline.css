@@ -1,0 +1,14 @@
+@tailwind utilities;
+
+@layer utilities {
+    .timeline-compact > li {
+        --timeline-row-start: 0;
+        --timeline-row-end: minmax(0, 1fr);
+        --timeline-col-start: 0
+    }
+    .timeline-snap-icon > li {
+        --timeline-row-start: 0.5rem;
+        --timeline-row-end: minmax(0, 1fr);
+        --timeline-col-start: minmax(0, 1fr);
+    }
+}

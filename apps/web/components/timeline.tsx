@@ -1,6 +1,7 @@
 import { DotFilledIcon } from '@radix-ui/react-icons'
 
 import { cn } from '@repo/ui/lib/utils'
+import '../styles/timeline.css'
 
 function TimelineItem({
   year,
@@ -37,7 +38,11 @@ function TimelineItem({
 }
 
 function Timeline({ children }: { children: React.ReactNode }) {
-  return <ul className="relative flex flex-col">{children}</ul>
+  return (
+    <ul className="timeline-snap-icon max-md:timeline-compact relative flex flex-col">
+      {children}
+    </ul>
+  )
 }
 
 export { Timeline, TimelineItem }
