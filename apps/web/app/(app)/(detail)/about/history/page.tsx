@@ -11,7 +11,7 @@ export default function History() {
           <TimelineItem
             key={history.id}
             {...history}
-            position={index % 2 ? 'start' : 'end'}
+            position={index % 2 ? 'left' : 'right'}
           />
         ))}
       </Timeline>

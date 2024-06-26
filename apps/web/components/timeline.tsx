@@ -7,12 +7,12 @@ function TimelineItem({
   year,
   title,
   description,
-  position = 'end',
+  position = 'right',
 }: {
   year?: number
   title?: string
   description?: string
-  position?: 'start' | 'end'
+  position?: 'left' | 'right'
 }) {
   return (
     <li className="relative grid shrink-0 grid-cols-[var(--timeline-col-start,minmax(0,1fr))_auto_var(--timeline-col-end,minmax(0,1fr))] grid-rows-[var(--timeline-row-start,minmax(0,1fr))_auto_var(--timeline-row-end,minmax(0,1fr))] items-center justify-items-center">
@@ -22,7 +22,7 @@ function TimelineItem({
       </div>
       <div
         className={cn(
-          position === 'start'
+          position === 'left'
             ? 'col-start-3 col-end-4 row-start-1 row-end-4 m-1 self-center justify-self-start md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-4 md:self-center md:justify-self-end md:text-end'
             : 'col-start-auto col-end-4 row-start-[none] row-end-4 self-center justify-self-start md:col-start-3 md:row-start-1',
           'mb-10',
