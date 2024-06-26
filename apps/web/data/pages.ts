@@ -80,6 +80,6 @@ const PAGES: Page[] = [
       },
     ],
   },
-]
+] as const
 
 export { type Page, type Subpath, PAGES }
