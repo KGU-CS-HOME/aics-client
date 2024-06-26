@@ -35,6 +35,6 @@ const CURRICULUMS: Curriculum[] = [
     year: 2018,
     filePath: '/pdfs/curriculum-2018.pdf',
   },
-]
+] as const
 
 export { type Curriculum, CURRICULUMS }

@@ -90,6 +90,6 @@ const LABS: Lab[] = [
     location: '제2공학관 615호',
     site: 'https://sites.google.com/kyonggi.ac.kr/cvpr/%ED%99%88',
   },
-]
+] as const
 
 export { type Lab, LABS }

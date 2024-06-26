@@ -14,6 +14,6 @@ const PATHMAP = {
   board: '게시판',
   notice: '공지 사항',
   news: '학부 소식',
-}
+} as const
 
 export { type pathmapKey, PATHMAP }

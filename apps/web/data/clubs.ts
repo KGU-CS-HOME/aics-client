@@ -36,6 +36,6 @@ const CLUBS: Club[] = [
     description: '',
     site: 'https://sites.google.com/view/inqinq',
   },
-]
+] as const
 
 export { type Club, CLUBS }

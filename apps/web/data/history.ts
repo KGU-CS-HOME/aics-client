@@ -72,6 +72,6 @@ const HISTORIES: History[] = [
     title: '3월',
     description: '소프트웨어경영대학 AI컴퓨터공학부로 소속 변경',
   },
-]
+] as const
 
 export { type History, HISTORIES }
