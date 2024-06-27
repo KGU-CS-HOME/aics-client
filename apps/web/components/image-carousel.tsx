@@ -2,14 +2,14 @@
 
 import Autoplay from 'embla-carousel-autoplay'
 
-import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
+import { AspectRatio } from '@aics/ui/components/ui/aspect-ratio'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@repo/ui/components/ui/carousel'
+} from '@aics/ui/components/ui/carousel'
 
 function ImageCarousel() {
   return (

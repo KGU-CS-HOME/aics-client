@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation'
 import { Link } from 'next-view-transitions'
 
-import { cn } from '@repo/ui/lib/utils'
-import { buttonVariants } from '@repo/ui/components/ui/button'
-import { Separator } from '@repo/ui/components/ui/separator'
+import { cn } from '@aics/ui/lib/utils'
+import { buttonVariants } from '@aics/ui/components/ui/button'
+import { Separator } from '@aics/ui/components/ui/separator'
 import { PAGES } from '../data/pages'
 import { PATHMAP, pathmapKey } from '../data/pathmap'
 

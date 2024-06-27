@@ -5,7 +5,7 @@ import type NextLink from 'next/link'
 import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
 
-import { cn } from '@repo/ui/lib/utils'
+import { cn } from '@aics/ui/lib/utils'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +13,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@repo/ui/components/ui/navigation-menu'
+} from '@aics/ui/components/ui/navigation-menu'
 import KGULogo from '../assets/svgs/kgu_logo.svg'
 
 const ListItem = forwardRef<

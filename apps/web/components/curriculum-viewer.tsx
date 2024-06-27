@@ -10,7 +10,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@repo/ui/components/ui/tabs'
+} from '@aics/ui/components/ui/tabs'
 import { CURRICULUMS } from '../data/curriculums'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(

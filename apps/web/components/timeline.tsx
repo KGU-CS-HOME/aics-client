@@ -1,6 +1,6 @@
 import { DotFilledIcon } from '@radix-ui/react-icons'
 
-import { cn } from '@repo/ui/lib/utils'
+import { cn } from '@aics/ui/lib/utils'
 import '../styles/timeline.css'
 
 function TimelineItem({

@@ -1,4 +1,4 @@
-import { PlateEditor } from '@repo/ui/components/plate-editor'
+import { PlateEditor } from '@aics/ui/components/plate-editor'
 
 export default function Page(): JSX.Element {
   return (

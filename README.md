@@ -9,9 +9,9 @@
 ### Apps and Packages
 
 - `web`: Next.js로 구성된 AI컴퓨터공학부 홈페이지입니다.
-- `@repo/ui`: `shadcn/ui`로 구성된 KGU-AICS의 디자인 시스템입니다. 추후 AICS만의 고유한 테마로 변경할 예정입니다.
-- `@repo/eslint-config`: 프로젝트에서 사용되는 `eslint` 설정을 모아뒀습니다.
-- `@repo/typescript-config`: 모노레포에서 전반적으로 사용되는 `tsconfig.json`을 관리합니다.
+- `@aics/ui`: `shadcn/ui`을 래핑한 KGU-AICS의 디자인 시스템입니다.
+- `@aics/eslint-config`: 프로젝트에서 사용되는 `eslint` 설정을 모아뒀습니다.
+- `@aics/typescript-config`: 모노레포에서 전반적으로 사용되는 `tsconfig.json`을 관리합니다.
 
 모든 패키지와 앱은 100% [TypeScript](https://www.typescriptlang.org/)로 작성되었습니다.
 

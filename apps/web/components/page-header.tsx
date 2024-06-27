@@ -11,7 +11,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@repo/ui/components/ui/breadcrumb'
+} from '@aics/ui/components/ui/breadcrumb'
 import { PATHMAP, pathmapKey } from '../data/pathmap'
 
 function PageHeader({

@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { Link } from 'next-view-transitions'
 
-import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
-import { Card, CardHeader, CardTitle } from '@repo/ui/components/ui/card'
+import { AspectRatio } from '@aics/ui/components/ui/aspect-ratio'
+import { Card, CardHeader, CardTitle } from '@aics/ui/components/ui/card'
 import type { Lab } from '../data/labs'
 
 function LabCard({ lab }: { lab: Lab }) {

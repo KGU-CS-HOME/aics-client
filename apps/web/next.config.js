@@ -10,7 +10,7 @@ const nextConfig = {
     ],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  transpilePackages: ['@repo/ui'],
+  transpilePackages: ['@aics/ui'],
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/i,

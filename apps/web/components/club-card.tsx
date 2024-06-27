@@ -1,9 +1,9 @@
-import { Card, CardHeader, CardTitle } from '@repo/ui/components/ui/card'
-import type { Club } from '../data/clubs'
-import { AspectRatio } from '@repo/ui/components/ui/aspect-ratio'
 import Image from 'next/image'
 import { Link } from 'next-view-transitions'
-import { SetStateAction } from 'react'
+
+import { Card, CardHeader, CardTitle } from '@aics/ui/components/ui/card'
+import { AspectRatio } from '@aics/ui/components/ui/aspect-ratio'
+import type { Club } from '../data/clubs'
 
 interface ClubCardProps {
   club: Club
