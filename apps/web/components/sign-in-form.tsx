@@ -4,16 +4,16 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { Button } from '@repo/ui/components/ui/button'
-import { Input } from '@repo/ui/components/ui/input'
+import { Button } from '@aics/ui/components/ui/button'
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from '@repo/ui/components/ui/form'
-import { defaultValues, signInFormSchema } from '../schemas/sign-in-form-schema'
+} from '@aics/ui/components/ui/form'
+import { Input } from '@aics/ui/components/ui/input'
+import { defaultValues, signInFormSchema } from '~/schemas/sign-in-form-schema'
 
 function SignInForm() {
   const form = useForm<z.infer<typeof signInFormSchema>>({

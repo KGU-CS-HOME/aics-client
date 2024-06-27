@@ -1,8 +1,8 @@
 import { Link } from 'next-view-transitions'
 
-import { Button } from '@repo/ui/components/ui/button'
-import { MainNav } from './main-nav'
-import { MobileNav } from './mobile-nav'
+import { Button } from '@aics/ui/components/ui/button'
+import { MainNav } from '~/components/main-nav'
+import { MobileNav } from '~/components/mobile-nav'
 
 function SiteHeader() {
   return (

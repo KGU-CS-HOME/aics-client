@@ -1,6 +1,6 @@
-import { PageHeader } from '../../../../../components/page-header'
-import { ProfessorCard } from '../../../../../components/professor-card'
-import { PROFESSORS } from '../../../../../data/professors'
+import { PageHeader } from '~/components/page-header'
+import { ProfessorCard } from '~/components/professor-card'
+import { PROFESSORS } from '~/constants/professors'
 
 export default function Page(): JSX.Element {
   return (

@@ -1,4 +1,4 @@
-import { LeftNavigationBar } from '../../../components/left-navigation-bar'
+import { LeftNavigationBar } from '~/components/left-navigation-bar'
 
 export default function LnbLayout({ children }: { children: React.ReactNode }) {
   return (

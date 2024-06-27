@@ -1,7 +1,7 @@
 import Image, { type ImageProps } from 'next/image'
 import type { LinkProps } from 'next/link'
-import type { MDXComponents } from 'mdx/types'
 import { Link } from 'next-view-transitions'
+import type { MDXComponents } from 'mdx/types'
 
 const components: MDXComponents = {
   h1: ({ children }) => (

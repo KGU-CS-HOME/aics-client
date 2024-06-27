@@ -4,8 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { Button } from '@repo/ui/components/ui/button'
-import { Input } from '@repo/ui/components/ui/input'
+import { Button } from '@aics/ui/components/ui/button'
 import {
   Form,
   FormControl,
@@ -14,8 +13,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@repo/ui/components/ui/form'
-import { defaultValues, signUpFormSchema } from '../schemas/sign-up-form-schema'
+} from '@aics/ui/components/ui/form'
+import { Input } from '@aics/ui/components/ui/input'
+import { defaultValues, signUpFormSchema } from '~/schemas/sign-up-form-schema'
 
 function SignUpForm() {
   const form = useForm<z.infer<typeof signUpFormSchema>>({

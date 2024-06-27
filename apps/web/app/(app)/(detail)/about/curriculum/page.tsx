@@ -1,5 +1,5 @@
-import { CurriculumViewer } from '../../../../../components/curriculum-viewer'
-import { PageHeader } from '../../../../../components/page-header'
+import { CurriculumViewer } from '~/components/curriculum-viewer'
+import { PageHeader } from '~/components/page-header'
 
 export default function Curriculum(): JSX.Element {
   return (

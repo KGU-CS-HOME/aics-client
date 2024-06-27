@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { ViewTransitions } from 'next-view-transitions'
 
-import '@repo/ui/globals.css'
-import { cn } from '@repo/ui/lib/utils'
+import '@aics/ui/globals.css'
+import { cn } from '@aics/ui/lib/utils'
 
 const wantedSans = localFont({
   src: '../public/fonts/wanted-sans-variable.woff2',
