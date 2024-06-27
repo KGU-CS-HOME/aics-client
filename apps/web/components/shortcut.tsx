@@ -1,12 +1,12 @@
 import { Link } from 'next-view-transitions'
 
 import { cn } from '@aics/ui/lib/utils'
+import { buttonVariants } from '@aics/ui/components/ui/button'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from '@aics/ui/components/ui/carousel'
-import { buttonVariants } from '@aics/ui/components/ui/button'
 
 function ShortcutLink({
   className,
