@@ -11,7 +11,7 @@ import {
   TabsList,
   TabsTrigger,
 } from '@aics/ui/components/ui/tabs'
-import { CURRICULUMS } from '../constants/curriculums'
+import { CURRICULUMS } from '~/constants/curriculums'
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.js',

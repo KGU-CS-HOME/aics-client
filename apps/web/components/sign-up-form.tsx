@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Button } from '@aics/ui/components/ui/button'
-import { Input } from '@aics/ui/components/ui/input'
 import {
   Form,
   FormControl,
@@ -15,7 +14,8 @@ import {
   FormLabel,
   FormMessage,
 } from '@aics/ui/components/ui/form'
-import { defaultValues, signUpFormSchema } from '../schemas/sign-up-form-schema'
+import { Input } from '@aics/ui/components/ui/input'
+import { defaultValues, signUpFormSchema } from '~/schemas/sign-up-form-schema'
 
 function SignUpForm() {
   const form = useForm<z.infer<typeof signUpFormSchema>>({

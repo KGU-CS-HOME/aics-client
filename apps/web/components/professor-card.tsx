@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@aics/ui/components/ui/card'
-import type { Professor } from '../constants/professors'
+import type { Professor } from '~/constants/professors'
 
 function ProfessorCard({ professor }: { professor: Professor }) {
   return (

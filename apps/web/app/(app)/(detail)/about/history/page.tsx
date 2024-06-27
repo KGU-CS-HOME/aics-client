@@ -1,6 +1,6 @@
-import { PageHeader } from '../../../../../components/page-header'
-import { Timeline, TimelineItem } from '../../../../../components/timeline'
-import { HISTORIES } from '../../../../../constants/history'
+import { PageHeader } from '~/components/page-header'
+import { Timeline, TimelineItem } from '~/components/timeline'
+import { HISTORIES } from '~/constants/history'
 
 export default function History() {
   return (

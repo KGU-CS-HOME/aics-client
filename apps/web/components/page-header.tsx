@@ -12,7 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@aics/ui/components/ui/breadcrumb'
-import { PATHMAP, pathmapKey } from '../constants/pathmap'
+import { PATHMAP, pathmapKey } from '~/constants/pathmap'
 
 function PageHeader({
   title,

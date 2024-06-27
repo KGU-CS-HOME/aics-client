@@ -1,6 +1,6 @@
-import { ImageCarousel } from '../../components/image-carousel'
-import { Shortcut } from '../../components/shortcut'
-import { RecentNotices } from '../../components/recent-notices'
+import { ImageCarousel } from '~/components/image-carousel'
+import { RecentNotices } from '~/components/recent-notices'
+import { Shortcut } from '~/components/shortcut'
 
 export default function Page(): JSX.Element {
   return (

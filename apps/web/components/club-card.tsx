@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { Link } from 'next-view-transitions'
 
-import { Card, CardHeader, CardTitle } from '@aics/ui/components/ui/card'
 import { AspectRatio } from '@aics/ui/components/ui/aspect-ratio'
-import type { Club } from '../constants/clubs'
+import { Card, CardHeader, CardTitle } from '@aics/ui/components/ui/card'
+import type { Club } from '~/constants/clubs'
 
 interface ClubCardProps {
   club: Club

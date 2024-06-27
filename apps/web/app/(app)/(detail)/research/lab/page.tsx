@@ -1,6 +1,6 @@
-import { PageHeader } from '../../../../../components/page-header'
-import { LabCard } from '../../../../../components/lab-card'
-import { LABS } from '../../../../../constants/labs'
+import { LabCard } from '~/components/lab-card'
+import { PageHeader } from '~/components/page-header'
+import { LABS } from '~/constants/labs'
 
 export default function Page(): JSX.Element {
   return (

@@ -2,8 +2,8 @@
 
 import { forwardRef } from 'react'
 import type NextLink from 'next/link'
-import { Link } from 'next-view-transitions'
 import { usePathname } from 'next/navigation'
+import { Link } from 'next-view-transitions'
 
 import { cn } from '@aics/ui/lib/utils'
 import {
@@ -14,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@aics/ui/components/ui/navigation-menu'
-import KGULogo from '../assets/svgs/kgu_logo.svg'
+import KGULogo from '~/assets/svgs/kgu_logo.svg'
 
 const ListItem = forwardRef<
   React.ElementRef<typeof NextLink>,

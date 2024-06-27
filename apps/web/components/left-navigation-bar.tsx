@@ -6,8 +6,8 @@ import { Link } from 'next-view-transitions'
 import { cn } from '@aics/ui/lib/utils'
 import { buttonVariants } from '@aics/ui/components/ui/button'
 import { Separator } from '@aics/ui/components/ui/separator'
-import { PAGES } from '../constants/pages'
-import { PATHMAP, pathmapKey } from '../constants/pathmap'
+import { PAGES } from '~/constants/pages'
+import { PATHMAP, type pathmapKey } from '~/constants/pathmap'
 
 function LeftNavigationBar() {
   const pathname = usePathname()
