@@ -1,6 +1,6 @@
 import { ClubCard } from '../../../../../components/club-card'
 import { PageHeader } from '../../../../../components/page-header'
-import { CLUBS } from '../../../../../data/clubs'
+import { CLUBS } from '../../../../../constants/clubs'
 
 export default function Page(): JSX.Element {
   return (
