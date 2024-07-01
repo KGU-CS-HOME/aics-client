@@ -8,6 +8,7 @@ import { cn } from '@aics/ui/lib/utils'
 const wantedSans = localFont({
   src: '../public/fonts/wanted-sans-variable.woff2',
   display: 'swap',
+  weight: '400 950',
 })
 
 export const metadata: Metadata = {
