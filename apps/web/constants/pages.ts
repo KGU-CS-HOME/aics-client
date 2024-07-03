@@ -21,6 +21,11 @@ const PAGES: Page[] = [
         url: '/dept',
       },
       {
+        id: 'curriculum',
+        title: '교육과정',
+        url: '/curriculum',
+      },
+      {
         id: 'history',
         title: '연혁',
         url: '/history',
@@ -29,11 +34,6 @@ const PAGES: Page[] = [
         id: 'contact',
         title: '찾아오시는 길',
         url: '/contact',
-      },
-      {
-        id: 'curriculum',
-        title: '교육과정',
-        url: '/curriculum',
       },
       {
         id: 'club',
@@ -80,6 +80,6 @@ const PAGES: Page[] = [
       },
     ],
   },
-]
+] as const
 
 export { type Page, type Subpath, PAGES }

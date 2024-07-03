@@ -160,6 +160,6 @@ const PROFESSORS: Professor[] = [
     contact: '031-249-1306',
     email: 'ksna001@kyonggi.ac.kr',
   },
-]
+] as const
 
 export { type Professor, PROFESSORS }

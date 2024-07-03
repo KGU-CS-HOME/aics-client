@@ -43,6 +43,6 @@ const CLUBS: Club[] = [
     description: '컴퓨터공학부 응원 동아리 엑센트입니다.',
     site: 'http://cafe.daum.net/Accent',
   },
-]
+] as const
 
 export { type Club, CLUBS }

@@ -2,14 +2,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@repo/ui/components/ui/avatar'
+} from '@aics/ui/components/ui/avatar'
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@repo/ui/components/ui/card'
-import type { Professor } from '../data/professors'
+} from '@aics/ui/components/ui/card'
+import type { Professor } from '~/constants/professors'
 
 function ProfessorCard({ professor }: { professor: Professor }) {
   return (

@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@repo/ui/components/ui/card'
+} from '@aics/ui/components/ui/card'
 
 const NOTICE_DATA = [
   {

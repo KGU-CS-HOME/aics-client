@@ -1,16 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import type { LinkProps } from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Link } from 'next-view-transitions'
 import { TextAlignJustifyIcon } from '@radix-ui/react-icons'
 
-import { cn } from '@repo/ui/lib/utils'
-import { Button } from '@repo/ui/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@repo/ui/components/ui/sheet'
-import { ScrollArea } from '@repo/ui/components/ui/scroll-area'
-import KGULogo from '../assets/svgs/kgu_logo.svg'
+import { cn } from '@aics/ui/lib/utils'
+import { Button } from '@aics/ui/components/ui/button'
+import { ScrollArea } from '@aics/ui/components/ui/scroll-area'
+import { Sheet, SheetContent, SheetTrigger } from '@aics/ui/components/ui/sheet'
+import KGULogo from '~/assets/svgs/kgu_logo.svg'
 
 function MobileLink({
   href,

@@ -1,6 +1,6 @@
 import { Link } from 'next-view-transitions'
 
-import { SignInForm } from '../../../components/sign-in-form'
+import { SignInForm } from '~/components/sign-in-form'
 
 export default function SignIn() {
   return (
