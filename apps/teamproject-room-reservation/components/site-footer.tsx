@@ -1,4 +1,4 @@
-import KGULogo from '~/app/assets/svgs/kgu_logo.svg'
+import KGULogo from '~/assets/svgs/kgu_logo.svg'
 
 function SiteFooter() {
   const year = new Date().getFullYear()

@@ -1,7 +1,7 @@
 import { Link } from 'next-view-transitions'
 
 import { Button } from '@ui/components/ui/button'
-import KGULogo from '~/app/assets/svgs/kgu_logo.svg'
+import KGULogo from '~/assets/svgs/kgu_logo.svg'
 
 function SiteHeader() {
   return (
