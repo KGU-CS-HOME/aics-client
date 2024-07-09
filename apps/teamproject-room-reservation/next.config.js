@@ -9,7 +9,7 @@ const nextConfig = {
       },
     ],
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   transpilePackages: ['@aics/ui'],
   webpack: (config) => {
     config.module.rules.push({
@@ -24,5 +24,4 @@ const nextConfig = {
   },
 }
 
-const withMDX = require('@next/mdx')()
-module.exports = withMDX(nextConfig)
+module.exports = nextConfig
