@@ -3,7 +3,7 @@
 import { Card, CardContent, CardFooter } from '@ui/components/ui/card'
 import { useState } from 'react'
 
-import { SEAT_DATA } from '~/app/constants/seat'
+import { SEAT_DATA } from '~/constants/seat'
 import { Seat } from './seat'
 import { SeatDescription } from './seat-description'
 
