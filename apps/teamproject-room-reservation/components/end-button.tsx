@@ -6,13 +6,12 @@ import { Button } from '@ui/components/ui/button'
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTrigger,
 } from '@ui/components/ui/dialog'
 
 function EndButton() {
-  const [isOccupied, setIsOccupied] = useState(true)
+  const [isOccupied, setIsOccupied] = useState(false)
   return (
     isOccupied && (
       <Dialog>
