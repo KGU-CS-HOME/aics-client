@@ -1,14 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    dangerouslyAllowSVG: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-  },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   transpilePackages: ['@aics/ui'],
   webpack: (config) => {
@@ -16,9 +7,6 @@ const nextConfig = {
       test: /\.svg$/i,
       use: ['@svgr/webpack'],
     })
-
-    config.resolve.alias.canvas = false
-    config.optimization.minimize = false
 
     return config
   },
